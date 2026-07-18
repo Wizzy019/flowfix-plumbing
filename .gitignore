@@ -9,11 +9,11 @@ lerna-debug.log*
 
 node_modules
 dist
-dist-ssr
+dist-ssrgti
 *.local
 
 # Editor directories and files
-.vscode/*
+.vscode/git *
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+structure.md
+checklist.md
+designsketch.md
+seo.md
