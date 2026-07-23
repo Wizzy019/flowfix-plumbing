@@ -23,7 +23,7 @@ const SocialIcon = ({ icon: Icon, className }: SocialIconsProps) => {
   return (
     <Icon
       size={30}
-      className={`p-1 border border-surface rounded-full ${className}`}
+      className={`rounded-full border border-surface p-1 ${className}`}
     />
   );
 };
@@ -33,7 +33,7 @@ const ContactIcon = ({ icon: Icon, className }: SocialIconsProps) => {
 };
 
 const FooterSectionTitle = ({ title }: FooterSectionTitleProp) => {
-  return <div className="font-bold mx-6">{title}</div>;
+  return <h3 className="font-bold mx-6">{title}</h3>;
 };
 
 const quickLinks = [
@@ -67,7 +67,7 @@ const hours = [
 
 const Footer = () => {
   return (
-    <footer className="min-h-svh bg-secondary w-full text-white text-pretty">
+    <footer className="min-h-svh bg-secondary w-full text-text-light-2">
       {/* LOGO */}
       <Container
         className="mb-6"

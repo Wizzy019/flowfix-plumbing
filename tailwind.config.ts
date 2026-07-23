@@ -19,6 +19,7 @@ const config: Config = {
 
         text: "var(--color-text)",
         "text-light": "var(--color-text-light)",
+        "text-light-2": "var(--color-text-light-2)",
         muted: "var(--color-text-muted)",
 
         border: "var(--color-border)",
