@@ -1,17 +1,12 @@
-import {
-  Factory,
-  Inspect,
-  LocationEdit,
-  Mail,
-  Phone,
-  X,
-  type LucideIcon,
-} from "lucide-react";
+import { LocationEdit, Mail, Phone } from "lucide-react";
 import Logo from "../../assets/images/logo.png";
 import Container from "../common/Container";
+import { FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import { FaMessage } from "react-icons/fa6";
 
 type SocialIconsProps = {
-  icon: LucideIcon;
+  icon: IconType;
   className?: string;
 };
 
@@ -33,7 +28,7 @@ const ContactIcon = ({ icon: Icon, className }: SocialIconsProps) => {
 };
 
 const FooterSectionTitle = ({ title }: FooterSectionTitleProp) => {
-  return <h3 className="font-bold mx-6">{title}</h3>;
+  return <h3 className="font-bold mx-6 cursor-pointer">{title}</h3>;
 };
 
 const quickLinks = [
@@ -67,7 +62,7 @@ const hours = [
 
 const Footer = () => {
   return (
-    <footer className="min-h-svh bg-secondary w-full text-text-light-2">
+    <footer className="min-h-screen bg-secondary w-full text-text-light-2 pb-8 md:pb-0">
       {/* LOGO */}
       <Container
         className="mb-6"
@@ -79,85 +74,87 @@ const Footer = () => {
               your plumbing needs.
             </div>
             <div className="flex gap-3">
-              <SocialIcon icon={Phone} />
-              <SocialIcon icon={Factory} />
-              <SocialIcon icon={Inspect} />
-              <SocialIcon icon={X} />
+              <SocialIcon icon={FaFacebook} />
+              <SocialIcon icon={FaInstagram} />
+              <SocialIcon icon={FaGoogle} />
+              <SocialIcon icon={FaMessage} />
             </div>
           </>
         }
       />
-      <div className="mb-4">
-        <FooterSectionTitle title="Quick Links" />
-        <Container
-          className="flex flex-col gap-1.5"
-          children={quickLinks.map((link) => {
-            return (
-              <a
-                key={link.id}
-                href={link.path}
-                className="text-sm font-extralight"
-              >
-                {link.label}
-              </a>
-            );
-          })}
-        />
+      <div className="w-full flex flex-col flex-1 md:flex-row md:items-center md:justify-between">
+        <div className="mb-4">
+          <FooterSectionTitle title="Quick Links" />
+          <Container
+            className="flex flex-col gap-1.5"
+            children={quickLinks.map((link) => {
+              return (
+                <a
+                  key={link.id}
+                  href={link.path}
+                  className="text-sm font-extralight"
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          />
+        </div>
+        <div className="mb-4">
+          <FooterSectionTitle title="Our Services" />
+          <Container
+            className="flex flex-col gap-1.5"
+            children={services.map((service) => {
+              return (
+                <a
+                  key={service.id}
+                  href={service.path}
+                  className="text-sm font-light cursor-pointer"
+                >
+                  {service.label}
+                </a>
+              );
+            })}
+          />
+        </div>
+        <div className="mb-4">
+          <FooterSectionTitle title="Contact Info" />
+          <Container
+            className="flex flex-col gap-1.5"
+            children={contacts.map((contact) => {
+              return (
+                <div key={contact.id} className="flex gap-4 cursor-pointer">
+                  <ContactIcon icon={contact.icon} />
+                  {contact.label}
+                </div>
+              );
+            })}
+          />
+        </div>
+        <div>
+          <FooterSectionTitle title="Business Hours" />
+          <Container
+            className="flex flex-col gap-1.5"
+            children={
+              <>
+                {hours.map((h) => {
+                  return (
+                    <div key={h.id} className="flex justify-between">
+                      <span className="cursor-pointer">{h.label}</span>
+                      <span>{h.time}</span>
+                    </div>
+                  );
+                })}
+                <span className="font-bold text-primary cursor-pointer">
+                  24/7 Emergency Service
+                </span>
+              </>
+            }
+          />
+        </div>
       </div>
-      <div className="mb-4">
-        <FooterSectionTitle title="Our Services" />
-        <Container
-          className="flex flex-col gap-1.5"
-          children={services.map((service) => {
-            return (
-              <a
-                key={service.id}
-                href={service.path}
-                className="text-sm font-light"
-              >
-                {service.label}
-              </a>
-            );
-          })}
-        />
-      </div>
-      <div className="mb-4">
-        <FooterSectionTitle title="Contact Info" />
-        <Container
-          className="flex flex-col gap-1.5"
-          children={contacts.map((contact) => {
-            return (
-              <div key={contact.id} className="flex gap-4">
-                <ContactIcon icon={contact.icon} />
-                {contact.label}
-              </div>
-            );
-          })}
-        />
-      </div>
-      <div>
-        <FooterSectionTitle title="Business Hours" />
-        <Container
-          className="flex flex-col gap-1.5"
-          children={
-            <>
-              {hours.map((h) => {
-                return (
-                  <div key={h.id} className="flex justify-between">
-                    <span>{h.label}</span>
-                    <span>{h.time}</span>
-                  </div>
-                );
-              })}
-              <span className="font-bold text-primary">
-                24/7 Emergency Service
-              </span>
-            </>
-          }
-        />
-      </div>
-      <div className="my-8 border-b-2 border-b-gray-600"></div>
-      <div className="flex flex-col items-center justify-center text-muted pb-6">
+      <div className="my-8 border-b-2 border-b-divider"></div>
+      <div className="flex flex-col items-center justify-center text-muted">
         <p>©Copyright Flowfix Plumbing</p>
         <p>All right Reserved</p>
       </div>

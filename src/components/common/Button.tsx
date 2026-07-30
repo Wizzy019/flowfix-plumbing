@@ -9,7 +9,7 @@ type ButtonProps = {
 export const Button = ({ icon: Icon, text, className }: ButtonProps) => {
   return (
     <button
-      className={`flex gap-4 items-center justify-center mt-4 border-2 border-primary rounded-sm ${className}`}
+      className={`mt-4 border-2 rounded-sm flex gap-4 items-center justify-center cursor-pointer ${className}`}
     >
       {Icon && <Icon />}
       {text}

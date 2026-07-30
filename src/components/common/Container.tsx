@@ -9,13 +9,13 @@ type ContainerProps = {
 const Container = ({ children, vatiant, className }: ContainerProps) => {
   const variants = {
     primary: "bg-primary text-white",
-    surface: "bg-surface text-primary",
+    surface: "bg-surface",
     transparent: "bg-transparent",
   };
 
   return (
     <div
-      className={`max-w-container mx-auto py-4 px-6 ${variants[vatiant ?? "transparent"]} ${className}`}
+      className={`max-w-container py-4 px-6 ${variants[vatiant ?? "transparent"]} ${className}`}
     >
       {children}
     </div>

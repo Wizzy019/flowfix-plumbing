@@ -3,8 +3,8 @@
     /* =========================
      COLORS
   ========================= */
-    --web-background: #e7e7e7;
-    --color-primary: #0f5eff;
+    --web-background: #f8f8f8;
+    --color-primary: #4f5eff;
     --color-primary-hover: #0c4ed8;
 
     --color-secondary: #0f172a;
@@ -18,11 +18,11 @@
     --color-white: #ffffff;
     --color-black: #000000;
 
-    --color-surface: #f8f8f8;
+    --color-surface: #fcfcfc;
     --color-surface-2: #ffffff;
 
     --color-text: #0f172a;
-    --color-text-light-2: #ffffff7b;
+    --color-text-light-2: #ffffffd7;
     --color-text-light: #475569;
     --color-text-muted: #94a3b8;
 
@@ -94,9 +94,9 @@
      TRANSITIONS
   ========================= */
 
-    --transition-fast: 150ms;
-    --transition-normal: 250ms;
-    --transition-slow: 350ms;
+    --transition-fast: 250ms;
+    --transition-normal: 350ms;
+    --transition-slow: 500ms;
 
     /* =========================
      Z INDEX
@@ -128,4 +128,12 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
