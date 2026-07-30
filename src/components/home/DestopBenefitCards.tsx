@@ -1,4 +1,4 @@
-import { benefits } from "../../data/Benefits";
+import { benefits } from "../../data/benefits";
 
 export default function DesktopBenefitsCard() {
   return (
