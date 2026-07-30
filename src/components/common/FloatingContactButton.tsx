@@ -1,8 +1,19 @@
 import { Phone, MessageCircle } from "lucide-react";
+import { motion } from "motion/react";
 
 const FloatingContactButton = () => {
   return (
-    <div className="fixed bottom-6 right-6 z-toast flex flex-col gap-3">
+    <motion.button
+      animate={{
+        scale: [1, 1.08, 1],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="fixed bottom-6 right-6 z-toast flex flex-col gap-3"
+    >
       <a
         href="https://wa.me/1234567890"
         className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-105"
@@ -16,7 +27,7 @@ const FloatingContactButton = () => {
       >
         <Phone size={24} />
       </a>
-    </div>
+    </motion.button>
   );
 };
 

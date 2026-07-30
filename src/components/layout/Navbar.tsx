@@ -1,9 +1,24 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, PhoneCall, X } from "lucide-react";
+import { motion } from "motion/react";
 import Logo from "../../assets/images/logo.png";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    console.log(window.scrollY);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
@@ -22,7 +37,18 @@ const Navbar = () => {
     { id: 6, label: "Contact", path: "" },
   ];
   return (
-    <header className="w-full h-[15vh] flex items-center justify-between mb-4 py-2 px-4 bg-surface">
+    <motion.header
+      animate={{
+        height: scrolled ? 60 : 72,
+        boxShadow: scrolled
+          ? "0 4px 12px rgba(0,0,0,0.12)"
+          : "0 0px 0px rgba(0,0,0,0)",
+      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`sticky top-0 z-50 w-full flex items-center justify-between mb-4 px-4 bg-surface ${
+        scrolled ? "shadow-lg" : ""
+      }`}
+    >
       <img src={Logo} alt="logo" className="w-40 h-20" />
       <div className="w-1/2">
         <button
@@ -50,7 +76,7 @@ const Navbar = () => {
         </nav>
         {/* MOBILE */}
         <div
-          className={`md:hidden h-screen bg-surface w-2/3 fixed top-20 right-0 px-4 transform transition duration-slow z-50 
+          className={`md:hidden h-screen bg-surface w-2/3 fixed top-15 right-0 px-4 transform transition duration-slow z-50 
             ${open ? "opacity-100 translate-x-0 overflow-y-hidden" : "opacity-0 translate-x-full"}`}
         >
           {navLinks.map((link) => {
@@ -65,7 +91,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`px-8 py-5 flex items-center justify-center gap-4 cursor-pointer`}
+        className={`px-8 py-5 hidden md:flex items-center justify-center gap-4 cursor-pointer`}
       >
         <PhoneCall size={28} className="text-primary" />
 
@@ -77,7 +103,7 @@ const Navbar = () => {
           </p>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

@@ -1,9 +1,9 @@
 import { LocationEdit, Mail, Phone } from "lucide-react";
-import Logo from "../../assets/images/logo.png";
-import Container from "../common/Container";
 import { FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import { FaMessage } from "react-icons/fa6";
+import Logo from "../../assets/images/white_logo.png";
+import Container from "../common/Container";
 
 type SocialIconsProps = {
   icon: IconType;
