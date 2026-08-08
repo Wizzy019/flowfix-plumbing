@@ -77,11 +77,11 @@ export default function Testimonials() {
 
   return (
     <FadeUp>
-      <section className="relative mb-8">
+      <section className="relative mb-8 py-4 bg-surface">
         <SectionTitle title="WHAT OUR CLIENTS SAY" />
 
         <Container
-          vatiant="surface"
+          vatiant="transparent"
           className="flex flex-col lg:flex-row gap-10"
         >
           <div className="lg:w-1/3">

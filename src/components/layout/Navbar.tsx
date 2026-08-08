@@ -29,9 +29,9 @@ const Navbar = () => {
   }, [open]);
 
   const navLinks = [
-    { id: 1, label: "Home", path: "" },
-    { id: 2, label: "About", path: "" },
-    { id: 3, label: "Services", path: "" },
+    { id: 1, label: "Home", path: "/" },
+    { id: 2, label: "About", path: "/about" },
+    { id: 3, label: "Services", path: "/services" },
     { id: 4, label: "Reviews", path: "" },
     { id: 5, label: "Services Areas", path: "" },
     { id: 6, label: "Contact", path: "" },
@@ -67,7 +67,7 @@ const Navbar = () => {
               <NavLink
                 key={link.id}
                 to={link.path}
-                className="mx-2 px-1.5 text-primary font-bold border-b border-transparent hover:border-primary transition-colors duration-slow"
+                className="mx-2 px-1.5 text-primary font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow"
               >
                 {link.label}
               </NavLink>
@@ -83,7 +83,9 @@ const Navbar = () => {
             return (
               <ul key={link.id}>
                 <li className="py-4 text-primary border-b-primary font-bold ">
-                  <NavLink to={link.path}>{link.label}</NavLink>
+                  <NavLink to={link.path} onClick={() => setOpen(false)}>
+                    {link.label}
+                  </NavLink>
                 </li>
               </ul>
             );

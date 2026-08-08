@@ -15,3 +15,7 @@ export const SectionDesc = ({ title1, title2 }: Props) => {
     </div>
   );
 };
+
+export const Desc = ({ text }: { text: string }) => (
+  <h2 className="text-3xl text-text font-bold">{text}</h2>
+);

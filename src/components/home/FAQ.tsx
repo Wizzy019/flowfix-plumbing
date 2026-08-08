@@ -11,11 +11,11 @@ export const FAQ = () => {
 
   return (
     <FadeUp>
-      <section className="mb-8">
+      <section className="mb-8 py-4 bg-surface">
         <SectionTitle title="FREQUENTLY ASKED QUESTIONS" />
         <Container
-          vatiant="surface"
-          className="bg-surface"
+          vatiant="transparent"
+          className=""
           children={
             <div className="flex flex-col gap-4">
               {faqs.map((faq) => (

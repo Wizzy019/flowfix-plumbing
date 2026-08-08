@@ -36,3 +36,42 @@ export const faqs = [
       "We provide drain cleaning, leak detection, pipe repairs, water heater installation and repair, toilet repairs, fixture installations, and general plumbing maintenance.",
   },
 ];
+
+export const serviceFaqs = [
+  {
+    id: 1,
+    question: "What plumbing services do you provide?",
+    answer:
+      "We provide a range of residential plumbing services, including general plumbing repairs, drain cleaning, water heater services, toilet repair and installation, leak detection, and sump pump services.",
+  },
+  {
+    id: 2,
+    question: "How do I know if I need professional plumbing help?",
+    answer:
+      "If you have a persistent leak, slow or blocked drain, low water pressure, unusual plumbing noises, inconsistent hot water, or a fixture that is not working properly, it is best to have a professional inspect the issue before it becomes more serious.",
+  },
+  {
+    id: 3,
+    question: "How much does a plumbing service cost?",
+    answer:
+      "The cost depends on the type of problem, the work required, and the parts or materials needed. We inspect the issue and provide a clear quote before beginning the work so you understand what to expect.",
+  },
+  {
+    id: 4,
+    question: "Can you help with recurring drain blockages?",
+    answer:
+      "Yes. If a drain keeps becoming blocked, simply clearing the clog may not solve the underlying problem. We can inspect the drainage system to identify possible causes and recommend the appropriate solution.",
+  },
+  {
+    id: 5,
+    question: "Do you repair and replace water heaters?",
+    answer:
+      "Yes. We provide water heater repairs, replacements, installations, and maintenance. If your current unit is no longer reliable or efficient, we can help determine whether repair or replacement makes more sense.",
+  },
+  {
+    id: 6,
+    question: "Can you find hidden plumbing leaks?",
+    answer:
+      "Yes. Some leaks occur behind walls, beneath floors, or in other areas that are difficult to access. We can inspect the plumbing system and work to locate the source of a hidden leak before carrying out the necessary repair.",
+  },
+];

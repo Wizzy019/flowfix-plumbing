@@ -1,18 +1,9 @@
-import {
-  ArrowRight,
-  ChevronRightIcon,
-  Droplet,
-  Gauge,
-  Heater,
-  Search,
-  Toilet,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, ChevronRightIcon, type LucideIcon } from "lucide-react";
 import { motion } from "motion/react";
 import Container from "../common/Container";
 import { SectionTitle } from "../common/SectionTitle";
 import { SectionDesc } from "../common/SectionDesc";
+import { services } from "../../data/service";
 import FadeUp from "../animations/FadeUp";
 
 type ServiceCardProps = {
@@ -41,45 +32,12 @@ function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
 }
 
 const Services = () => {
-  const services = [
-    {
-      icon: Wrench,
-      title: "General Plumbing",
-      description: "Fixing leaks, faucets, fixtures, pipes and more.",
-    },
-    {
-      icon: Droplet,
-      title: "Drain Cleaning",
-      description: "Clogged drain? We'll clear it fast and keep it flowing.",
-    },
-    {
-      icon: Heater,
-      title: "Water Heater Services",
-      description: "Repair, replacement and installation for all models.",
-    },
-    {
-      icon: Toilet,
-      title: "Toilet Repair & Installation",
-      description: "From running toilets to new installations, we do it all.",
-    },
-    {
-      icon: Search,
-      title: "Leak Detection",
-      description: "Advanced tools to find and fix leaks fast.",
-    },
-    {
-      icon: Gauge,
-      title: "Sump Pump Services",
-      description: "Installation, repair and maintenance for sump pumps.",
-    },
-  ];
-
   return (
     <FadeUp>
-      <section className="relative mb-8">
+      <section className="relative mb-8 py-4 bg-surface">
         <SectionTitle title="OUR SERVICES" />
         <Container
-          vatiant="surface"
+          vatiant="transparent"
           className="flex flex-col md:flex-row"
           children={
             <>

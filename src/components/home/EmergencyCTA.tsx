@@ -7,10 +7,10 @@ import FadeUp from "../animations/FadeUp";
 export const EmergencyCTA = () => {
   return (
     <FadeUp>
-      <section className="bg-primary">
+      <section className="bg-background mb-8 px-6 md:px-4">
         <Container
           vatiant="primary"
-          className="flex flex-col md:flex-row items-center justify-between mx-auto rounded-t-xl"
+          className="flex flex-col md:flex-row items-center justify-between mx-auto rounded-xl"
           children={
             <>
               <EmergencyIcon />
@@ -22,7 +22,7 @@ export const EmergencyCTA = () => {
                   We're available 24/7 to handle any plumbing emergency
                 </span>
               </div>
-              <div className="max-w-full md:w-1/2 my-4 flex flex-col md:flex-row gap-3">
+              <div className="w-full md:w-1/2 my-4 flex flex-col md:flex-row gap-3">
                 <Button
                   icon={Phone}
                   text="+12347890"

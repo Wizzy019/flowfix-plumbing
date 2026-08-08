@@ -6,13 +6,10 @@ import { ServiceAreas } from "../components/home/ServiceAreas";
 import Services from "../components/home/Services";
 import Testimonials from "../components/home/Testimonials";
 import WhyChooseUs from "../components/home/WhyChooseUs";
-import Footer from "../components/layout/Footer";
-import Navbar from "../components/layout/Navbar";
 
 const Home = () => {
   return (
-    <div className="bg-background min-h-screen z-10">
-      <Navbar />
+    <main className="bg-background min-h-screen z-10">
       <Hero />
       <Services />
       <WhyChooseUs />
@@ -21,8 +18,7 @@ const Home = () => {
       <FloatingContactButton />
       <ServiceAreas />
       <EmergencyCTA />
-      <Footer />
-    </div>
+    </main>
   );
 };
 

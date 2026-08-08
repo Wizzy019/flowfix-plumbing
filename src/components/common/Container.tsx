@@ -15,7 +15,7 @@ const Container = ({ children, vatiant, className }: ContainerProps) => {
 
   return (
     <div
-      className={`max-w-container py-4 px-6 ${variants[vatiant ?? "transparent"]} ${className}`}
+      className={`py-4 px-6 ${variants[vatiant ?? "transparent"]} ${className}`}
     >
       {children}
     </div>
