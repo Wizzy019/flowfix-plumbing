@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import MainLayout from "../layouts/MainLayout";
 import Services from "../pages/Services";
+import Reviews from "../pages/Reviews";
 
 export const router = createHashRouter([
   {
@@ -19,6 +20,10 @@ export const router = createHashRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews />,
       },
     ],
   },

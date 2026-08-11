@@ -1,11 +1,10 @@
-import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "motion/react";
+import useEmbla from "../../useEmbla";
 import Container from "../common/Container";
 import { SectionDesc } from "../common/SectionDesc";
 import { SectionTitle } from "../common/SectionTitle";
 import { FaStar } from "react-icons/fa";
 import { testimonials } from "../../data/testimonials";
-import { useEffect, useState } from "react";
 import FadeUp from "../animations/FadeUp";
 
 type StarRatingProp = {
@@ -19,7 +18,7 @@ type TestimonialCardProps = {
   location: string;
 };
 
-const StarRating = ({ rating }: StarRatingProp) => {
+export const StarRating = ({ rating }: StarRatingProp) => {
   return (
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
@@ -53,27 +52,7 @@ const TestimonialCard = ({
 };
 
 export default function Testimonials() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-  });
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    };
-
-    emblaApi.on("select", onSelect);
-    onSelect();
-
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
-  }, [emblaApi]);
+  const { emblaRef, emblaApi, selectedIndex, scrollTo } = useEmbla();
 
   return (
     <FadeUp>
@@ -116,7 +95,7 @@ export default function Testimonials() {
               {emblaApi?.scrollSnapList().map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => emblaApi.scrollTo(index)}
+                  onClick={() => scrollTo(index)}
                   className={`size-3 rounded-full transition-colors ${
                     index === selectedIndex ? "bg-primary" : "bg-divider"
                   }`}
