@@ -99,7 +99,7 @@ const Services = () => {
 
           <Container
             vatiant="surface"
-            className="flex items-center justify-between"
+            className="grid grid-cols-2 md:grid-cols-4 items-center justify-between "
             children={
               <>
                 {steps.map((step) => (
