@@ -113,7 +113,7 @@ export const serviceReviews = [
     reviews: 95,
   },
   {
-    icon: FaToilet,
+    icon: GiMarrowDrain,
     title: "Drain Cleaning",
     rating: 4.9,
     reviews: 88,
@@ -125,7 +125,7 @@ export const serviceReviews = [
     reviews: 76,
   },
   {
-    icon: GiMarrowDrain,
+    icon: FaToilet,
     title: "Toilet Repair & Installation",
     rating: 4.9,
     reviews: 82,
