@@ -38,15 +38,18 @@ const Services = () => {
               <>
                 <Desc text="How We Solve Plumbing Problems" />
                 <p className="text-text mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                  labore illo suscipit nemo, quis rerum ipsum nisi distinctio
-                  excepturi itaque aspernatur, adipisci odit sed. Ut modi illum,
-                  rem quas praesentium nostrum quo temporibus fugiat numquam,
-                  officiis deleniti voluptates repudiandae nemo quos quod, eos
-                  eius excepturi nam vitae cum ex facilis reiciendis?
-                  Asperiores, ut exercitationem. A quos iste dolor, molestiae
-                  explicabo non modi eum ipsum, ullam sint, at sunt doloremque
-                  beatae!
+                  We provide reliable plumbing solutions for homes and
+                  businesses across Ontario. From everyday plumbing repairs and
+                  drain cleaning to water heater services, leak detection, and
+                  sump pump maintenance, our experienced professionals are
+                  equipped to handle a wide range of plumbing needs. We focus on
+                  clear communication, honest recommendations, and quality
+                  workmanship from the first inspection to the final repair.
+                  Whether you’re dealing with a small issue or a plumbing
+                  problem that needs immediate attention, we’ll help identify
+                  the cause and provide a practical solution. Our goal is
+                  simple: dependable plumbing service that keeps your home
+                  running safely and smoothly.
                 </p>
               </>
             }

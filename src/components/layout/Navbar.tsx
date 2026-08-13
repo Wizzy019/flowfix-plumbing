@@ -66,7 +66,10 @@ const Navbar = () => {
               <NavLink
                 key={link.id}
                 to={link.path}
-                className="mx-2 px-1.5 text-primary font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow"
+                className={({ isActive }) =>
+                  ` mx-2 px-1.5 font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow
+                    ${isActive ? "text-primary border-primary" : "text-text"}`
+                }
               >
                 {link.label}
               </NavLink>
@@ -75,14 +78,20 @@ const Navbar = () => {
         </nav>
         {/* MOBILE */}
         <div
-          className={`md:hidden h-screen bg-surface w-2/3 fixed top-15 right-0 px-4 transform transition duration-slow z-50 
+          className={`md:hidden h-screen bg-surface w-2/3 fixed top-15 right-0 transform transition duration-slow z-50 
             ${open ? "opacity-100 translate-x-0 overflow-y-hidden" : "opacity-0 translate-x-full"}`}
         >
           {navLinks.map((link) => {
             return (
               <ul key={link.id}>
-                <li className="py-4 text-primary border-b-primary font-bold ">
-                  <NavLink to={link.path} onClick={() => setOpen(false)}>
+                <li className="py-4 text-primary font-bold ">
+                  <NavLink
+                    to={link.path}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-primary text-start pt-2 pr-38 pl-3 pb-4 rounded  ${isActive ? "bg-primary-light border-b-2" : ""}`
+                    }
+                  >
                     {link.label}
                   </NavLink>
                 </li>
@@ -109,3 +118,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// mx-2 px-1.5 text-primary font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow

@@ -17,6 +17,8 @@ const config: Config = {
         surface: "var(--color-surface)",
         "surface-2": "var(--color-surface-2)",
 
+        "primary-light": "var(--color-primary-light)",
+
         text: "var(--color-text)",
         "text-light": "var(--color-text-light)",
         "text-light-2": "var(--color-text-light-2)",

@@ -62,7 +62,7 @@ const hours = [
 
 const Footer = () => {
   return (
-    <footer className="min-h-screen bg-secondary w-full text-text-light-2 pb-8 md:pb-0">
+    <footer className="min-h-screen md:min-h-fit bg-secondary w-full text-text-light-2 pb-8">
       {/* LOGO */}
       <Container
         className="mb-6"

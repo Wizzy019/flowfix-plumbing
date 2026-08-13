@@ -19,7 +19,7 @@ function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
       <div className="ml-3 text-text">
         <h3 className="font-bold">{title}</h3>
         <p className="text-sm text-text-light">{description}</p>
-        <a href="#">
+        <a href="/service">
           <div className="hidden mt-6 font-bold text-sm text-primary cursor-pointer md:flex items-center gap-2">
             <span>Learn More</span>
             <ArrowRight size={15} />

@@ -97,10 +97,10 @@ const Reviews = () => {
               <div className="flex-1 text-text flex flex-col gap-2">
                 <Desc text="What Our Clients Say" />
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Iusto, accusantium odio laudantium illo doloremque atque optio
-                  et harum id libero quis magnam dolorum nesciunt distinctio
-                  pariatur consequatur.
+                  Hear from homeowners across Ontario who trust us for reliable
+                  plumbing service, honest communication, and quality
+                  workmanship. See what our customers have to say about their
+                  experience.
                 </p>
               </div>
 

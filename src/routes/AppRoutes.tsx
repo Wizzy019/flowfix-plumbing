@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import Services from "../pages/Services";
 import Reviews from "../pages/Reviews";
 import Contact from "../pages/Contact";
+import NotFound from "../pages/NotFound";
 
 export const router = createHashRouter([
   {
@@ -31,5 +32,9 @@ export const router = createHashRouter([
         element: <Contact />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
