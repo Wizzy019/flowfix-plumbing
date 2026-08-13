@@ -1,12 +1,13 @@
 import type { IconType } from "react-icons";
 import FadeUp from "../components/animations/FadeUp";
 import Container from "../components/common/Container";
-import { Desc } from "../components/common/SectionDesc";
+import { Desc, PageDesc } from "../components/common/SectionDesc";
 import { SectionTitle } from "../components/common/SectionTitle";
 import { contactItems } from "../data/contactItems";
 import { ContactRound } from "lucide-react";
 import ContactForm from "../components/contact/ContactForm";
 import { serviceAreas } from "../data/serviceAreas";
+import { useSEO } from "../hooks/usePageTitle";
 
 type ContactInfoItemProps = {
   icon: IconType;
@@ -26,7 +27,7 @@ function ContactInfoItem({
       </div>
 
       <div className="flex flex-col items-start">
-        <h3 className="font-semibold text-lg">{title}</h3>
+        <h4 className="font-semibold text-lg">{title}</h4>
 
         <div className="mt-2">{children}</div>
       </div>
@@ -64,6 +65,14 @@ const ContactInfoCard = () => {
 };
 
 const Contact = () => {
+  useSEO({
+    title: "Contact Flowfix Plumbing | Get a Free Estimate",
+    description:
+      "Contact Flowfix Plumbing for reliable plumbing services in Ontario. Request a free estimate or get help with your plumbing needs.",
+    image: "",
+    url: "",
+  });
+
   const mobileEndIds = [3, 6, 9, 12];
   const desktopEndIds = [6, 12];
   return (
@@ -76,7 +85,7 @@ const Contact = () => {
             className="flex flex-col items-center gap-2"
             children={
               <>
-                <Desc text="We Are Here To Help" />
+                <PageDesc text="We Are Here To Help" />
                 <p className="w-3/4 text-text">
                   Have a question, need a quote, or dealing with a plumbing
                   issue? Send us a message and our team will get back to you as

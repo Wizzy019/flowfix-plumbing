@@ -35,7 +35,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="rounded-lg border border-border bg-surface p-5 text-startd"
       >
-        <h2 className="mb-6 text-xl font-bold text-text">Send Us a Message</h2>
+        <h3 className="mb-6 text-xl font-bold text-text">Send Us a Message</h3>
 
         <div className="grid gap-5 md:grid-cols-2">
           {/* Name */}

@@ -43,36 +43,42 @@ export const detialedServices = [
   {
     image: GenPlumbingImg,
     title: "General Plumbing",
+    alt: "Plumber cleanig the toilet",
     description:
       "From leaking faucets and damaged pipes to fixture repairs and installations, our general plumbing service handles the everyday plumbing problems around your home. We diagnose the issue properly, explain what needs to be done, and carry out reliable repairs to get your plumbing working as it should.",
   },
   {
     image: Cleaning,
     title: "Drain Cleaning",
+    alt: "Plumber Cleanig the toilet",
     description:
       "Slow or completely blocked drains can quickly become a bigger problem. Our drain cleaning service clears stubborn clogs and buildup from sinks, showers, toilets, and other drainage systems. We work to restore proper water flow while identifying potential issues that could cause repeated blockages in the future.",
   },
   {
     image: ServiceImg,
     title: "Water Heater Services",
+    alt: "Plumber servicing a water heater",
     description:
       "Whether your water heater is leaking, producing inconsistent hot water, or refusing to work altogether, we can help. We provide water heater repairs, replacements, installations, and maintenance for different systems. Our goal is to restore a dependable hot water supply while helping you choose the right solution for your home.",
   },
   {
     image: Installation,
     title: "Toilet Repair & Installation",
+    alt: "Plumber installing toilet",
     description:
       "A running, leaking, clogged, or poorly functioning toilet can waste water and become a daily frustration. We handle common toilet repairs as well as complete toilet installations. From replacing faulty components to installing a new toilet, we make sure everything is properly fitted, sealed, and working correctly.",
   },
   {
     image: Detection,
     title: "Leak Detection",
+    alt: "Plumber trying to detect a leak",
     description:
       "Some plumbing leaks are easy to spot, while others can remain hidden behind walls, under floors, or around fixtures. Our leak detection service helps locate the source of the problem before it causes more damage. We carefully inspect the plumbing system and provide the necessary repair to stop the leak.",
   },
   {
     image: PumpService,
     title: "Sump Pump Services",
+    alt: "A Pump chember",
     description:
       "A reliable sump pump helps protect your basement from unwanted water and flooding. We provide sump pump installation, repairs, replacements, and maintenance to keep your system ready when you need it most. Whether your pump has stopped working or you need a new system installed, we can help protect your home.",
   },

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import useEmbla from "../../useEmbla";
+import useEmbla from "../../hooks/useEmbla";
 import Container from "../common/Container";
 import { SectionDesc } from "../common/SectionDesc";
 import { SectionTitle } from "../common/SectionTitle";

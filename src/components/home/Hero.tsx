@@ -58,12 +58,12 @@ const Hero = () => {
                   >
                     Trusted Plumbing Services in Ontario
                   </motion.h1>
-                  <motion.h2
+                  <motion.h1
                     variants={item}
                     className="text-3xl md:text-4xl text-primary"
                   >
                     Whenever You Need Us
-                  </motion.h2>
+                  </motion.h1>
                   <motion.p
                     variants={item}
                     className="text-sx md:text-xl font-light mt-4"

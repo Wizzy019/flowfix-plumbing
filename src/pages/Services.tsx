@@ -10,11 +10,12 @@ import {
 } from "lucide-react";
 import FadeUp from "../components/animations/FadeUp";
 import Container from "../components/common/Container";
-import { Desc } from "../components/common/SectionDesc";
+import { Desc, PageDesc } from "../components/common/SectionDesc";
 import { SectionTitle } from "../components/common/SectionTitle";
 import { detialedServices as services } from "../data/service";
 import { serviceFaqs as faqs } from "../data/faq";
 import { EmergencyCTA } from "../components/home/EmergencyCTA";
+import { useSEO } from "../hooks/usePageTitle";
 
 const steps = [
   { icon: PhoneIcon, text: "1. Contact Us" },
@@ -26,6 +27,14 @@ const steps = [
 const Services = () => {
   const [openId, setOpenId] = useState<number | null>(null);
 
+  useSEO({
+    title: "Plumbing Services in Ontario | Flowfix Plumbing",
+    description:
+      "Explore reliable plumbing services from Flowfix Plumbing, including repairs, drain cleaning, leak detection, and other plumbing solutions.",
+    image: "",
+    url: "",
+  });
+
   return (
     <main className="bg-background pt-4">
       <FadeUp>
@@ -36,7 +45,7 @@ const Services = () => {
             className=""
             children={
               <>
-                <Desc text="How We Solve Plumbing Problems" />
+                <PageDesc text="How We Solve Plumbing Problems" />
                 <p className="text-text mt-4">
                   We provide reliable plumbing solutions for homes and
                   businesses across Ontario. From everyday plumbing repairs and
@@ -56,44 +65,40 @@ const Services = () => {
           />
         </section>
       </FadeUp>
-      <FadeUp>
-        <section className="mb-6">
-          <Container
-            vatiant="surface"
-            className="flex flex-col gap-0"
-            children={
-              <>
-                {services.map((service, index) => (
-                  <FadeUp>
-                    <div
-                      className={`p-4 bg-surface rounded-lg border md:border-0 border-border flex flex-col md:flex-row items-center gap-3 md:gap-8 
+      <section className="mb-6">
+        <Container
+          vatiant="surface"
+          className="flex flex-col gap-0"
+          children={
+            <>
+              {services.map((service, index) => (
+                <FadeUp>
+                  <div
+                    className={`p-4 bg-surface rounded-lg border md:border-0 border-border flex flex-col md:flex-row items-center gap-3 md:gap-8 
                       ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-                    >
-                      <div className="">
-                        <img
-                          src={service.image}
-                          alt=""
-                          className="h-40 md:w-2xl rounded-lg"
-                        />
-                      </div>
-                      <div className="w-full md:w-1/2 flex flex-col gap-2 items-start">
-                        <h3 className="font-bold">{service.title}</h3>
-                        <p className="text-sm text-text">
-                          {service.description}
-                        </p>
-                        <button className="text-primary font-bold flex gap-4 items-center cursor-pointer">
-                          <p>Request This Service </p>
-                          <ArrowRight size={20} />
-                        </button>
-                      </div>
+                  >
+                    <div className="">
+                      <img
+                        src={service.image}
+                        alt={service.alt}
+                        className="h-40 md:w-2xl rounded-lg"
+                      />
                     </div>
-                  </FadeUp>
-                ))}
-              </>
-            }
-          />
-        </section>
-      </FadeUp>
+                    <div className="w-full md:w-1/2 flex flex-col gap-2 items-start">
+                      <h3 className="font-bold">{service.title}</h3>
+                      <p className="text-sm text-text">{service.description}</p>
+                      <button className="text-primary font-bold flex gap-4 items-center cursor-pointer">
+                        <p>Request This Service </p>
+                        <ArrowRight size={20} />
+                      </button>
+                    </div>
+                  </div>
+                </FadeUp>
+              ))}
+            </>
+          }
+        />
+      </section>
       <FadeUp>
         <section className="mb-6 bg-surface py-4">
           <div className="text-center">

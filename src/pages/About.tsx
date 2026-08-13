@@ -10,6 +10,7 @@ import { plumbers } from "../data/about";
 import { LiaLinkedin } from "react-icons/lia";
 import { EmergencyCTA } from "../components/home/EmergencyCTA";
 import { Desc } from "../components/common/SectionDesc";
+import { useSEO } from "../hooks/usePageTitle";
 
 const variants = {
   primary: "text-primary",
@@ -58,6 +59,14 @@ function WhyChooseUsCard({ title, description }: WhyChooseUsCardProps) {
 }
 
 const About = () => {
+  useSEO({
+    title: "About Flowfix Plumbing | Trusted Ontario Plumbers",
+    description:
+      "Learn about Flowfix Plumbing and our commitment to providing reliable, professional plumbing services to homeowners across Ontario.",
+    image: "",
+    url: "",
+  });
+
   return (
     <main className="bg-background min-h-screen z-10">
       <Hero />
@@ -89,7 +98,11 @@ const About = () => {
             />
           </div>
           <div className="mx-auto hidden md:block">
-            <img src={OurBus} className="h-70 w-xl rounded-xl" />
+            <img
+              src={OurBus}
+              alt="Flowfix Plumbing service van with company logo"
+              className="h-70 w-xl rounded-xl"
+            />
           </div>
         </section>
       </FadeUp>
@@ -146,7 +159,7 @@ const About = () => {
           <div className="mx-auto hidden md:block px-4">
             <img
               src={TrustImage}
-              alt="fixing pipes"
+              alt="A plumber fixing pipes"
               className="h-100 w-xl rounded-lg"
             />
           </div>
@@ -168,7 +181,7 @@ const About = () => {
                         <div className="w-full">
                           <img
                             src={plumber.image}
-                            alt={plumber.name}
+                            alt={`${plumber.name} A Flowfix technician`}
                             className="h-52 w-full rounded-lg"
                           />
                         </div>

@@ -16,6 +16,10 @@ export const SectionDesc = ({ title1, title2 }: Props) => {
   );
 };
 
+export const PageDesc = ({ text }: { text: string }) => (
+  <h1 className="text-3xl text-text font-bold">{text}</h1>
+);
+
 export const Desc = ({ text }: { text: string }) => (
   <h2 className="text-3xl text-text font-bold">{text}</h2>
 );

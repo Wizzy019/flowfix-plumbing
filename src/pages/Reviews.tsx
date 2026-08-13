@@ -1,10 +1,10 @@
 import { FcGoogle } from "react-icons/fc";
 import FadeUp from "../components/animations/FadeUp";
 import Container from "../components/common/Container";
-import { Desc } from "../components/common/SectionDesc";
+import { PageDesc } from "../components/common/SectionDesc";
 import { SectionTitle } from "../components/common/SectionTitle";
 import { StarRating } from "../components/home/Testimonials";
-import useEmbla from "../useEmbla";
+import useEmbla from "../hooks/useEmbla";
 import { FaCrown, FaFacebook } from "react-icons/fa";
 import {
   ArrowRight,
@@ -17,6 +17,7 @@ import { type IconType } from "react-icons";
 import { Button } from "../components/common/Button";
 import ReviewImg from "../assets/images/drop-review.jpg";
 import { EmergencyCTA } from "../components/home/EmergencyCTA";
+import { useSEO } from "../hooks/usePageTitle";
 
 const ratingDistribution = [
   { stars: 5, percentage: 92 },
@@ -85,6 +86,14 @@ const Reviews = () => {
   const { emblaRef, emblaApi, selectedIndex, scrollNext, scrollPrev } =
     useEmbla();
 
+  useSEO({
+    title: "Flowfix Plumbing Reviews | Trusted Ontario Plumbers",
+    description:
+      "Read customer reviews and see why homeowners choose Flowfix Plumbing for reliable, professional plumbing services across Ontario.",
+    image: "",
+    url: "",
+  });
+
   return (
     <section className="bg-background">
       <SectionTitle title="REVIEWS" />
@@ -95,7 +104,7 @@ const Reviews = () => {
           children={
             <>
               <div className="flex-1 text-text flex flex-col gap-2">
-                <Desc text="What Our Clients Say" />
+                <PageDesc text="What Our Clients Say" />
                 <p>
                   Hear from homeowners across Ontario who trust us for reliable
                   plumbing service, honest communication, and quality
@@ -269,15 +278,15 @@ const Reviews = () => {
             className="flex flex-col md:flex-row items-center justify-between mx-auto rounded-xl gap-4"
             children={
               <>
-                <div className="flex ">
+                <div className="flex gap-3">
                   <MessageSquareCheck
                     size={40}
                     className="text-primary mb-4 md:mr-4"
                   />
                   <span>
-                    <h2 className="font-bold text-3xl mb-2 md:px-auto">
+                    <h3 className="font-bold text-2xl mb-2 md:px-auto">
                       Had a great experince with our team?
-                    </h2>
+                    </h3>
                     <p className="">
                       We would love to hear from you and help others in the
                       community
@@ -288,7 +297,7 @@ const Reviews = () => {
                   <Button
                     text="Leave a  Review"
                     icon={ArrowRight}
-                    className="w-full h-20 bg-primary text-white p-4 text-xl font-bold flex-row-reverse"
+                    className="w-full bg-primary text-white p-4 text-xl font-bold flex-row-reverse"
                   />
                 </div>
                 <div className="hidden md:flex">

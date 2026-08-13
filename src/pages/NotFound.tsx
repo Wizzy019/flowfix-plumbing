@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { useSEO } from "../hooks/usePageTitle";
 
 export default function NotFound() {
+  useSEO({
+    title: "Page Not Found | Flowfix Plumbing",
+    description:
+      "The page you're looking for could not be found. Return to Flowfix Plumbing to explore our plumbing services.",
+    image: "",
+    url: "",
+  });
   return (
     <main className="min-h-[70vh] flex items-center justify-center px-4">
       <div className="max-w-md text-center">
