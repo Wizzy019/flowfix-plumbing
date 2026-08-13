@@ -41,7 +41,7 @@ const ContactInfoCard = () => {
   return (
     <Container
       vatiant="surface"
-      className="w-90 rounded-lg border border-border flex flex-col gap-6"
+      className="max-w-80 rounded-lg border border-border flex flex-col gap-6"
       children={
         <>
           <div className="flex gap-4 mb-2">
