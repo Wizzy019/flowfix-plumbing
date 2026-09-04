@@ -1,10 +1,10 @@
 import { Droplet, Gauge, Heater, Search, Toilet, Wrench } from "lucide-react";
-import GenPlumbingImg from "../assets/images/gen_plumbing.jpg";
-import Cleaning from "../assets/images/drian-cleaning.jpg";
-import ServiceImg from "../assets/images/water-heater-service.jpg";
-import Installation from "../assets/images/installation.jpg";
-import Detection from "../assets/images/detection.jpg";
-import PumpService from "../assets/images/pump-service.jpg";
+import GenPlumbingImg from "../assets/images/gen_plumbing.webp";
+import Cleaning from "../assets/images/drain_cleaning.webp";
+import ServiceImg from "../assets/images/water_heater.webp";
+import Installation from "../assets/images/installation.webp";
+import Detection from "../assets/images/detection.webp";
+import PumpService from "../assets/images/pump_service.webp";
 
 export const services = [
   {

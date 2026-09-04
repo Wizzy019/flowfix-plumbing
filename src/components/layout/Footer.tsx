@@ -1,12 +1,15 @@
-import { LocationEdit, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import { FaMessage } from "react-icons/fa6";
-import Logo from "../../assets/images/white_logo.png";
+import Logo from "../../assets/images/white_logo.webp";
 import Container from "../common/Container";
+import { NavLink } from "react-router-dom";
 
 type SocialIconsProps = {
   icon: IconType;
+  label: string;
+  href: string;
   className?: string;
 };
 
@@ -14,17 +17,21 @@ type FooterSectionTitleProp = {
   title: string;
 };
 
-const SocialIcon = ({ icon: Icon, className }: SocialIconsProps) => {
+const SocialIcon = ({
+  icon: Icon,
+  label,
+  href,
+  className,
+}: SocialIconsProps) => {
   return (
-    <Icon
-      size={30}
+    <a
+      href={href}
+      aria-label={label}
       className={`rounded-full border border-surface p-1 ${className}`}
-    />
+    >
+      <Icon size={30} aria-hidden="true" />
+    </a>
   );
-};
-
-const ContactIcon = ({ icon: Icon, className }: SocialIconsProps) => {
-  return <Icon size={30} className={`${className}`} />;
 };
 
 const FooterSectionTitle = ({ title }: FooterSectionTitleProp) => {
@@ -48,12 +55,6 @@ const services = [
   { id: 6, label: "Sump Pump Services", path: "" },
 ];
 
-const contacts = [
-  { id: 1, label: "+2347034011184", icon: Phone },
-  { id: 2, label: "flowfix@gmail.com", icon: Mail },
-  { id: 3, label: "Ontario, Canada", icon: LocationEdit },
-];
-
 const hours = [
   { id: 1, label: "Monday - Friday", time: "7:00AM - 8:00PM" },
   { id: 2, label: "Saturday", time: "7:00AM - 8:00PM" },
@@ -68,16 +69,22 @@ const Footer = () => {
         className="mb-6"
         children={
           <>
-            <img src={Logo} alt="logo" className="w-40 h-20 mb-4" />
+            <img
+              src={Logo}
+              alt="flowfix-plumbing"
+              width={160}
+              height={80}
+              className="w-40 h-20 mb-4"
+            />
             <div className="mb-4 font-light">
               Reliable plumbing service you can count on. Available 24/7 for all
               your plumbing needs.
             </div>
             <div className="flex gap-3">
-              <SocialIcon icon={FaFacebook} />
-              <SocialIcon icon={FaInstagram} />
-              <SocialIcon icon={FaGoogle} />
-              <SocialIcon icon={FaMessage} />
+              <SocialIcon icon={FaFacebook} label="Facebook" href="#" />
+              <SocialIcon icon={FaInstagram} label="Instagram" href="#" />
+              <SocialIcon icon={FaGoogle} label="Google" href="#" />
+              <SocialIcon icon={FaMessage} label="Contact Us" href="#" />
             </div>
           </>
         }
@@ -89,13 +96,13 @@ const Footer = () => {
             className="flex flex-col gap-1.5"
             children={quickLinks.map((link) => {
               return (
-                <a
+                <NavLink
                   key={link.id}
-                  href={link.path}
+                  to={link.path}
                   className="text-sm font-extralight"
                 >
                   {link.label}
-                </a>
+                </NavLink>
               );
             })}
           />
@@ -117,18 +124,22 @@ const Footer = () => {
             })}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 flex flex-col">
           <FooterSectionTitle title="Contact Info" />
           <Container
             className="flex flex-col gap-1.5"
-            children={contacts.map((contact) => {
-              return (
-                <div key={contact.id} className="flex gap-4 cursor-pointer">
-                  <ContactIcon icon={contact.icon} />
-                  {contact.label}
-                </div>
-              );
-            })}
+            children={
+              <>
+                <a href="mailto:flowfix@gmail.com" className="flex gap-4">
+                  <Mail aria-hidden="true" />
+                  flowfix@gmail.com
+                </a>
+                <a href="tel:+2347034011184" className="flex gap-4">
+                  <Phone aria-hidden="true" />
+                  +2347034011184
+                </a>
+              </>
+            }
           />
         </div>
         <div>

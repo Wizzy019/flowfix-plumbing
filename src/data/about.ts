@@ -5,10 +5,10 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
-import MikeThompsonImg from "../assets/images/mike_thompson.jpg";
-import AlexMorganImg from "../assets/images/alex_morgan.jpg";
-import SarahJohnsonImg from "../assets/images/sarah_johnson.jpg";
-import DavidchanImg from "../assets/images/david_chan.jpg";
+import MikeThompsonImg from "../assets/images/mike_thompson.webp";
+import AlexMorganImg from "../assets/images/alex_morgan.webp";
+import SarahJohnsonImg from "../assets/images/sarah_johnson.webp";
+import DavidchanImg from "../assets/images/david_chan.webp";
 
 type Variant = "primary" | "secondary";
 type PlumberImageType = typeof MikeThompsonImg;

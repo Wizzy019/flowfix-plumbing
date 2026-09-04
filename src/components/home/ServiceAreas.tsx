@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import { motion } from "motion/react";
-import OntarioMap from "../../assets/images/ontario_map.jpg";
+import OntarioMap from "../../assets/images/ontario_map.webp";
 import { SectionDesc } from "../common/SectionDesc";
 import { SectionTitle } from "../common/SectionTitle";
 import { serviceAreas } from "../../data/serviceAreas";

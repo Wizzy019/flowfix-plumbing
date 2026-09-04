@@ -4,8 +4,8 @@ import Container from "../components/common/Container";
 import { SectionTitle } from "../components/common/SectionTitle";
 import FadeUp from "../components/animations/FadeUp";
 import { trustFeatures, values } from "../data/about";
-import OurBus from "../assets/images/bus.jpg";
-import TrustImage from "../assets/images/fixing-man.jpg";
+import OurBus from "../assets/images/company_bus.webp";
+import TrustImage from "../assets/images/fixing_man.webp";
 import { plumbers } from "../data/about";
 import { LiaLinkedin } from "react-icons/lia";
 import { EmergencyCTA } from "../components/home/EmergencyCTA";
@@ -100,6 +100,7 @@ const About = () => {
           <div className="mx-auto hidden md:block">
             <img
               src={OurBus}
+              loading="lazy"
               alt="Flowfix Plumbing service van with company logo"
               className="h-70 w-xl rounded-xl"
             />
@@ -159,6 +160,7 @@ const About = () => {
           <div className="mx-auto hidden md:block px-4">
             <img
               src={TrustImage}
+              loading="lazy"
               alt="A plumber fixing pipes"
               className="h-100 w-xl rounded-lg"
             />
@@ -181,6 +183,7 @@ const About = () => {
                         <div className="w-full">
                           <img
                             src={plumber.image}
+                            loading="lazy"
                             alt={`${plumber.name} A Flowfix technician`}
                             className="h-52 w-full rounded-lg"
                           />

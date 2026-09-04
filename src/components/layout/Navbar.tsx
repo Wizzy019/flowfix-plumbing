@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, PhoneCall, X } from "lucide-react";
 import { motion } from "motion/react";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo.webp";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -48,9 +48,20 @@ const Navbar = () => {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <img src={Logo} alt="logo" className="w-40 h-20" />
+      <img
+        src={Logo}
+        alt="flowfix-plumbing"
+        width={160}
+        className="w-40 h-20"
+      />
       <div className="w-1/2">
         <button
+          type="button"
+          aria-label={
+            open ? "Close navigation button" : "Open navigation button"
+          }
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen(!open)}
           className="ml-auto flex size-11 items-center justify-center transition-colors md:hidden"
         >
@@ -60,14 +71,17 @@ const Navbar = () => {
             <Menu className="text-primary" />
           )}
         </button>
-        <nav className="hidden w-max md:flex items-center ml-auto">
+        <nav
+          id="main-navigation"
+          className="hidden w-max md:flex items-center ml-auto"
+        >
           {navLinks.map((link) => {
             return (
               <NavLink
                 key={link.id}
                 to={link.path}
                 className={({ isActive }) =>
-                  ` mx-2 px-1.5 font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow
+                  ` mx-2 px-1.5 font-bold border-b-3 border-transparent hover:border-border transition-colors duration-slow
                     ${isActive ? "text-primary border-primary" : "text-text"}`
                 }
               >
@@ -77,7 +91,8 @@ const Navbar = () => {
           })}
         </nav>
         {/* MOBILE */}
-        <div
+        <nav
+          id="mobile-navigation"
           className={`md:hidden h-screen bg-surface w-2/3 fixed top-15 right-0 transform transition duration-slow z-50 
             ${open ? "opacity-100 translate-x-0 overflow-y-hidden" : "opacity-0 translate-x-full"}`}
         >
@@ -89,7 +104,7 @@ const Navbar = () => {
                     to={link.path}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `w-full text-primary text-start pt-2 pr-38 pl-3 pb-4 rounded  ${isActive ? "bg-primary-light border-b-2" : ""}`
+                      `w-full text-primary text-start pt-2 pr-38 pl-3 pb-4 rounded  ${isActive ? "border-l-4" : ""}`
                     }
                   >
                     {link.label}
@@ -98,25 +113,27 @@ const Navbar = () => {
               </ul>
             );
           })}
-        </div>
+        </nav>
       </div>
-      <div
+      <a
+        href="tel:+2347045011184"
         className={`px-8 py-5 hidden md:flex items-center justify-center gap-4 cursor-pointer`}
+        aria-label="Call Flowfix Plumbing at +2347045011184"
       >
         <PhoneCall size={28} className="text-primary" />
 
         <div className="text-center">
-          <h3 className="text-primary text-xl font-bold">(905) 123-4567</h3>
+          <h3 className="text-primary text-xl font-bold cursor-pointer">
+            (905) 123-4567
+          </h3>
 
           <p className="text-sm text-muted-foreground">
             24/7 Emergency Service
           </p>
         </div>
-      </div>
+      </a>
     </motion.header>
   );
 };
 
 export default Navbar;
-
-// mx-2 px-1.5 text-primary font-bold border-b-3 border-transparent hover:border-primary transition-colors duration-slow

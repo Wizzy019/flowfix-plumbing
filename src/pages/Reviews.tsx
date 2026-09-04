@@ -15,7 +15,7 @@ import {
 import { reviews, serviceReviews } from "../data/testimonials";
 import { type IconType } from "react-icons";
 import { Button } from "../components/common/Button";
-import ReviewImg from "../assets/images/drop-review.jpg";
+import ReviewImg from "../assets/images/drop_review.webp";
 import { EmergencyCTA } from "../components/home/EmergencyCTA";
 import { useSEO } from "../hooks/usePageTitle";
 
@@ -301,7 +301,12 @@ const Reviews = () => {
                   />
                 </div>
                 <div className="hidden md:flex">
-                  <img src={ReviewImg} className="w-150 h-50" />
+                  <img
+                    src={ReviewImg}
+                    alt="A plumber"
+                    loading="lazy"
+                    className="w-150 h-50"
+                  />
                 </div>
               </>
             }

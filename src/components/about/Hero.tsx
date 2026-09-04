@@ -3,7 +3,7 @@ import { CheckCircle, PhoneIcon } from "lucide-react";
 import { Clock, ShieldCheck, type LucideIcon } from "lucide-react";
 import { Button } from "../common/Button";
 import Container from "../common/Container";
-import BackgroundImage from "../../assets/images/about_hero.jpg";
+import BackgroundImage from "../../assets/images/about_hero.webp";
 import FadeUp from "../animations/FadeUp";
 
 type TrustItemsProps = {
